@@ -1,7 +1,7 @@
 aws_access_key: abc
 aws_secret_key: abc/qbwxPuwbZ2E8fCfHZRqk3
 key_name: openshift
-remote_user: centos
+remote_user: root
 namespace: openshift_one_node
 region: eu-west-1
 instance_type: m4.xlarge

@@ -47,4 +47,5 @@
 
 - name: Start the OpenShift cluster
   shell: ./cluster_up
+  become: true
   

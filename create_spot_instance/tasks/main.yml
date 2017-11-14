@@ -21,6 +21,7 @@
         volume_size: '{{ volume_size }}'
         delete_on_termination: true
   register: ec2
+
 - name: Add new instance to host group
   add_host:
     hostname: '{{ item.public_ip }}'
