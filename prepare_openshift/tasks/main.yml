@@ -6,7 +6,7 @@
 
         export ROUTING_SUFFIX=$PUBLIC_IP.nip.io
 
-        export NODE_ROOT=/home/centos
+        export NODE_ROOT=/opt/openshift
 
         export NODE_DATA=$NODE_ROOT/data
 
@@ -40,7 +40,7 @@
         --routing-suffix=$PUBLIC_IP.nip.io --host-config-dir=$NODE_DATA/v1
         --host-data-dir=$NODE_DATA/v2 --host-pv-dir=$NODE_DATA/v3
         --host-volumes-dir=$NODE_DATA/v4 --use-existing-config=true
-        --logging=false --metrics=false --version=v3.6.0" >>
+        --logging=false --metrics=false --version={{ openshift_version }}" >>
         $NODE_ROOT/cluster_up
 
         sudo chmod +x $NODE_ROOT/cluster_up

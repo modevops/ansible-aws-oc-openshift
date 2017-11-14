@@ -1,4 +1,4 @@
-- name: Install pre-req packages on nodes
+- name: Install additional packages on the node
   yum:
     name:
       - "wget"
@@ -12,13 +12,13 @@
   become: true
 
 - name: Add current user to root group
-  shell: sudo usermod -aG root `whoami`
+  shell: usermod -aG root `whoami`
   become: true
 
 - name: Update docker config
-  shell: echo "/INSECURE_REGISTRY=/c\INSECURE_REGISTRY='--insecure-registry" >> /etc/sysconfig/docker 
+  shell: echo "INSECURE_REGISTRY='--insecure-registry 172.30.0.0/16'" >> /etc/sysconfig/docker
   become: true
    
 - name: Restart Docker
-  shell: systemctl enable docker && systemctl daemon-reload && systemctl start docker
+  shell: systemctl start docker && systemctl enable docker && systemctl start docker
   become: true
