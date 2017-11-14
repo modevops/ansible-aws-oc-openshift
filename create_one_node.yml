@@ -5,3 +5,5 @@
   roles:
     - { role: check_aws_vars }
     - { role: create_openshift_security_group }
+    - { role: create_spot_instance }
+    - { role: wait_for_ssh }
