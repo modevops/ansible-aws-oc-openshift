@@ -1,7 +1,7 @@
 - name: Create a single-node OpenShift cluster
   hosts: launched
-  become: true
-  remote_user: centos
+  become: false
+  remote_user: '{{ remote_user }}'
   gather_facts: true
   shell: >
         ls -la

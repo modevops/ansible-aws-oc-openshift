@@ -1,16 +1,20 @@
 aws_access_key: abc
 aws_secret_key: abc/qbwxPuwbZ2E8fCfHZRqk3
 key_name: openshift
-amazon_user: ec2-user
+remote_user: centos
 namespace: openshift_one_node
 region: eu-west-1
 instance_type: m4.xlarge
 instance_id: openshift_one
-ami_id: ami-abc
+# Atomic Host
+#ami_id: ami-a1b9b7c7
+# CentOS7
+ami_id: ami-b15897c8
 subnet_id: subnet-44xxx
 security_group: openshift_security_group
 vpc_id: vpc-0dxxx
 vpc_subnet_id: sg-c50xxx
 spot_price: 0.1
 volume_size: 30
+openshift_version: v3.6.0
 ansible_ssh_private_key_file: $HOME/.ssh/openshift.pem
