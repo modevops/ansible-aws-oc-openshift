@@ -1,64 +1,7 @@
-- name: Create a single node OpenShift cluster
+- name: Create a single-node OpenShift cluster
   hosts: launched
   become: true
   remote_user: centos
   gather_facts: true
-  tasks:
-    - name: Config Docker
-      shell: >
-        # add current user to group root, not nice but makes sure docker behaves
-
-        sudo usermod -aG root `whoami`
-
-        # change the docker config (Needed for OpenShift)
-
-        sudo systemctl stop docker  sudo echo
-        "/INSECURE_REGISTRY=/c\INSECURE_REGISTRY='--insecure-registry" >>
-        /etc/sysconfig/docker sudo systemctl start docker
-    - name: Prepare the instance
-      shell: >
-        export PUBLIC_IP={{ hostvars['localhost']['ec2'].instances[0].public_ip
-        }}
-
-        export ROUTING_SUFFIX=$PUBLIC_IP.nip.io
-
-        export NODE_ROOT=/home/centos
-
-        export NODE_DATA=$NODE_ROOT/data
-
-        export
-        CLI_URL=https://github.com/openshift/origin/releases/download/v3.6.0/openshift-origin-client-tools-v3.6.0-c4dd4cf-linux-64bit.tar.gz
-
-        # create the volume folders
-
-        sudo mkdir -p $NODE_DATA/v1
-
-        sudo mkdir -p $NODE_DATA/v2
-
-        sudo mkdir -p $NODE_DATA/v3
-
-        sudo mkdir -p $NODE_DATA/v4
-
-        sudo chmod -R 777 $NODE_ROOT # FIXME care for proper permissions?
-
-
-        # install the CLI
-
-        curl -L -0 $CLI_URL | tar -zx -C /tmp
-
-        cd /tmp/op* && sudo mv oc /usr/local && sudo ln -sf /usr/local/oc
-        /usr/local/bin/oc
-
-
-        # create the cluster script
-
-        sudo echo "/usr/local/oc cluster up --public-hostname=$PUBLIC_IP
-        --routing-suffix=$PUBLIC_IP.nip.io --host-config-dir=$NODE_DATA/v1
-        --host-data-dir=$NODE_DATA/v2 --host-pv-dir=$NODE_DATA/v3
-        --host-volumes-dir=$NODE_DATA/v4 --use-existing-config=true
-        --logging=false --metrics=false --version=v3.6.0" >>
-        $NODE_ROOT/cluster_up
-
-        sudo chmod +x $NODE_ROOT/cluster_up
-    - name: Create and start the cluster
-      shell: ./cluster_up
+  shell: >
+        ls -la

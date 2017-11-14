@@ -6,4 +6,4 @@
     - role: create_openshift_security_group
     - role: create_spot_instance
     - role: wait_for_ssh
-    - role: prepare_docker
+    - role: create_one_node_cluster
