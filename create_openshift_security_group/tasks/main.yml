@@ -1,4 +1,3 @@
----
 - name: Create a security group
   local_action:
     module: ec2_group

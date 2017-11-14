@@ -1,10 +1,9 @@
----
 - name: Create a single-node OpenShift cluster
   hosts: all
   gather_facts: false
   roles:
-    - { role: check_aws_vars }
-    - { role: create_openshift_security_group }
-    - { role: create_spot_instance }
-    - { role: wait_for_ssh }
-    - { role: create_one_node_cluster }
+    - role: check_aws_vars
+    - role: create_openshift_security_group
+    - role: create_spot_instance
+    - role: wait_for_ssh
+    - role: create_one_node_cluster
