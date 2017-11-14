@@ -4,3 +4,4 @@
   gather_facts: false
   roles:
     - { role: check_aws_vars }
+    - { role: create_openshift_security_group }
