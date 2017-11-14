@@ -4,7 +4,7 @@
     aws_access_key: '{{ aws_access_key }}'
     aws_secret_key: '{{ aws_secret_key }}'
     id: '{{ instance_id }}'
-    group: '{{ security_group }}'
+    group: '{{namespace}}-security_group'
     instance_type: '{{ instance_type}}'
     image: '{{ ami_id }}'
     region: '{{ region }}'
