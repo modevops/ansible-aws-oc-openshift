@@ -1,5 +1,4 @@
----
-- name: Create a single-node OpenShift cluster
+- name: Create a single node OpenShift cluster
   hosts: launched
   become: true
   remote_user: centos
@@ -13,9 +12,9 @@
 
         # change the docker config (Needed for OpenShift)
 
-        sudo systemctl stop docker 
-        sudo echo "/INSECURE_REGISTRY=/c\INSECURE_REGISTRY='--insecure-registry" >> /etc/sysconfig/docker
-        sudo systemctl start docker
+        sudo systemctl stop docker  sudo echo
+        "/INSECURE_REGISTRY=/c\INSECURE_REGISTRY='--insecure-registry" >>
+        /etc/sysconfig/docker sudo systemctl start docker
     - name: Prepare the instance
       shell: >
         export PUBLIC_IP={{ hostvars['localhost']['ec2'].instances[0].public_ip
