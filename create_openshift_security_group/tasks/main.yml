@@ -5,7 +5,7 @@
     description: openshift security group
     aws_access_key: '{{ aws_access_key }}'
     aws_secret_key: '{{ aws_secret_key }}'
-    name: '{{ security_group }}'
+    name: '{{namespace}}-security_group'
     region: '{{ region }}'
     vpc_id: '{{ vpc_id }}'
     state: present

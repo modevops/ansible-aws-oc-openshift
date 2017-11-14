@@ -1,9 +1,11 @@
 aws_access_key: abc
 aws_secret_key: abc/qbwxPuwbZ2E8fCfHZRqk3
 key_name: openshift
+amazon_user: ec2-user
+namespace: openshift_one_node
 region: eu-west-1
 instance_type: m4.xlarge
-instance_id: openshift_master
+instance_id: openshift_one
 ami_id: ami-abc
 subnet_id: subnet-44xxx
 security_group: openshift_security_group
