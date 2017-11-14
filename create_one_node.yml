@@ -1,0 +1,6 @@
+---
+- name: Create a single-node OpenShift cluster
+  hosts: all
+  gather_facts: false
+  roles:
+    - { role: check_aws_vars }
