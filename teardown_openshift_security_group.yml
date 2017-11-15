@@ -1,0 +1,5 @@
+- name: Delete openshift security group
+  ec2_group:
+    name: '{{namespace}}-security_group'
+    region: "{{region}}"
+    state: "absent"
