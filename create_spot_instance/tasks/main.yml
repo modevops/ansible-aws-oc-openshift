@@ -15,7 +15,6 @@
     assign_public_ip: yes
     wait: true
     state: present
-    count: 1
     volumes:
       - device_name: /dev/sda1
         volume_size: '{{ volume_size }}'
