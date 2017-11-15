@@ -1,5 +1,5 @@
-- name: Gather instance facts
-  ec2_remote_facts:
+- name: Get instance facts
+  ec2_instance_facts:
     region: "{{ region }}"
     filters:
       "tag:namespace": "{{namespace}}"
@@ -9,7 +9,7 @@
   ec2:
     state: absent
     region: "{{ region }}"
-    instance_ids: "{{ item.id }}"
+    instance_ids: "{{ item.instance_id }}"
     wait: yes
   with_items: "{{ ec2_facts.instances }}"
   when: item.state != 'terminated'

@@ -1,5 +1,5 @@
 - name: Teardown Environment
-  hosts: local
+  hosts: all
   roles:
   - role: teardown_spot_instance
   - role: teardown_openshift_security_group
