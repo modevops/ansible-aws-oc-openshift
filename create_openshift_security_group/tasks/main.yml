@@ -5,6 +5,9 @@
     aws_access_key: '{{ aws_access_key }}'
     aws_secret_key: '{{ aws_secret_key }}'
     name: '{{namespace}}-security_group'
+    tags:
+      Name: "{{namespace}}-security_group"
+      namespace: "{{namespace}}" 
     region: '{{ region }}'
     vpc_id: '{{ vpc_id }}'
     state: present
