@@ -3,8 +3,8 @@
   gather_facts: false
   roles:
     - role: check_aws_vars
-    - role: create_openshift_security_group
-    - role: create_spot_instance
+    - role: create_security_group
+    - role: create_instance
     - role: wait_for_ssh
 - name: Configure instance
   hosts: launched
