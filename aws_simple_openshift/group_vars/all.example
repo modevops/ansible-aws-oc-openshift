@@ -16,5 +16,5 @@ vpc_id: vpc-0dxxx
 vpc_subnet_id: sg-c50xxx
 spot_price: 0.1
 volume_size: 30
-openshift_version: v3.6.0
+openshift_version: v3.7.0
 ansible_ssh_private_key_file: $HOME/.ssh/openshift.pem
