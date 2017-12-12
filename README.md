@@ -1,2 +1,2 @@
 # ansible-openshift
-Ansible Playbooks to setup OpenShift
+Ansible Playbook to setup a single-node OpenShift 'cluster' on AWS.
