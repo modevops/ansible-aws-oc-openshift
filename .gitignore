@@ -10,3 +10,6 @@ tmp/
 
 # Vagrant
 .vagrant/
+
+# MacOS
+.DS_Store
