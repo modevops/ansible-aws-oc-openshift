@@ -1,10 +1,11 @@
 - name: Create the OpenShift cluster-up script
   become: true
   shell: >
-        export PUBLIC_IP={{ hostvars['localhost']['ec2'].instances[0].public_ip
-        }}
+        export PUBLIC_IP={{hostvars['localhost']['ec2'].instances[0].public_ip}}
 
-        export ROUTING_SUFFIX=$PUBLIC_IP.nip.io
+        export PUBLIC_HOSTNAME="master.{{public_dns_zone}}"
+
+        export ROUTING_SUFFIX="{{public_subdomain_prefix}}.{{public_dns_zone}}"
 
         export NODE_ROOT=/opt/openshift
 
@@ -36,11 +37,11 @@
 
         # create the cluster script
 
-        sudo echo "/usr/local/oc cluster up --public-hostname=$PUBLIC_IP
-        --routing-suffix=$PUBLIC_IP.nip.io --host-config-dir=$NODE_DATA/v1
+        sudo echo "/usr/local/oc cluster up --public-hostname=$PUBLIC_HOSTNAME
+        --routing-suffix=$ROUTING_SUFFIX --host-config-dir=$NODE_DATA/v1
         --host-data-dir=$NODE_DATA/v2 --host-pv-dir=$NODE_DATA/v3
         --host-volumes-dir=$NODE_DATA/v4 --use-existing-config=true
-        --logging=false --metrics=false --version={{ openshift_version }}" >>
+        --logging={{ openshift_logging }} --metrics={{ openshift_metrics }} --version={{ openshift_version }}" >>
         $NODE_ROOT/cluster_up
 
         sudo chmod +x $NODE_ROOT/cluster_up

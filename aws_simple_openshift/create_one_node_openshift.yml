@@ -5,6 +5,7 @@
     - role: check_aws_vars
     - role: create_security_group
     - role: create_instance
+    - role: create_dns
     - role: wait_for_ssh
 - name: Configure instance
   hosts: launched

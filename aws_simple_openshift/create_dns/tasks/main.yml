@@ -1,0 +1,32 @@
+- name: add public dns
+  route53:
+    zone: "{{public_dns_zone}}"
+    record: "{{public_dns_zone}}"
+    type: A
+    ttl: 300
+    value: "{{ hostvars['localhost']['ec2'].instances[0].public_ip}}"
+    wait: yes
+    command: "create"
+    overwrite: yes
+
+- name: add public master dns
+  route53:
+    zone: "{{public_dns_zone}}"
+    record: "master.{{public_dns_zone}}"
+    type: A
+    ttl: 300
+    value: "{{ hostvars['localhost']['ec2'].instances[0].public_ip}}"
+    wait: yes
+    command: "create"
+    overwrite: yes
+
+- name: add public wildcard dns
+  route53:
+    zone: "{{public_dns_zone}}"
+    record: "*.{{public_subdomain_prefix}}.{{public_dns_zone}}"
+    type: A
+    ttl: 300
+    value: "{{ hostvars['localhost']['ec2'].instances[0].public_ip}}"
+    wait: yes
+    command: "create"
+    overwrite: yes
