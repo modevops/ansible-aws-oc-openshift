@@ -49,4 +49,3 @@
 - name: Start the OpenShift cluster
   shell: /opt/openshift/cluster_up
   become: true
-  
