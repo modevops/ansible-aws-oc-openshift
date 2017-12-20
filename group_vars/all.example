@@ -26,7 +26,7 @@ vpc_subnet_id: sg-c50...
 
 # The public DNS zone
 public_dns_zone: "example.com"
-# Prefix for subdomain for wildcard DNS, i.e. *.apps.ocplab.com
+# Prefix for subdomain for wildcard DNS, i.e. *.apps.example.com
 public_subdomain_prefix: "apps"
 
 # OpenShift options
@@ -35,7 +35,7 @@ openshift_logging: false
 openshift_metrics: false
 
 # Other
-namespace: openshift_one_node
+namespace: openshift_one
 instance_id: openshift_one
 
 # Local pricate key
