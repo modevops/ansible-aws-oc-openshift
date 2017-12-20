@@ -5,6 +5,10 @@ Ansible Playbook to setup a single-node OpenShift 'cluster' on AWS.
 
 Make a copy of file `group_vars/all.example` and rename it to `all`. Change default values with your AWS values.
 
+NOTE:
+Value of `ansible_ssh_private_key_file` has to be an absolute path!
+
+
 ## Create the OpenShift Instance
 
 To create a new instance run this Ansible playbook:
