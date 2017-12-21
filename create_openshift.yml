@@ -1,5 +1,5 @@
 - name: Prepare AWS
-  hosts: all
+  hosts: localhost
   gather_facts: false
   roles:
     - role: check_aws_vars
@@ -7,6 +7,7 @@
     - role: create_instance
     - role: create_dns
     - role: wait_for_ssh
+
 - name: Configure instance
   hosts: launched
   become: true

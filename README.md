@@ -14,7 +14,7 @@ Value of `ansible_ssh_private_key_file` has to be an absolute path!
 To create a new instance run this Ansible playbook:
 
 ```shell
-$ ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i inventory/inventory.cfg create_openshift.yml
+$ ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i inventory/inventory.example create_openshift.yml
 ```
 
 ## Teardown the OpenShift Instance
@@ -22,7 +22,7 @@ $ ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i inventory/inventory.cfg cr
 To destroy the instance run this Ansible playbook:
 
 ```shell
-$ ansible-playbook -i inventory/inventory.cfg teardown_openshift.yml
+$ ansible-playbook -i inventory/inventory.example teardown_openshift.yml
 ```
 
 WARNING: 

@@ -1,5 +1,5 @@
 - name: Teardown Environment
-  hosts: all
+  hosts: localhost
   roles:
   - role: teardown_instance
   - role: teardown_security_group
