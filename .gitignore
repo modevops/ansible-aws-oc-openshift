@@ -4,6 +4,7 @@ tmp/
 # Used by dotenv library to load environment variables.
 .env
 **/group_vars/all
+**/inventory/inventory*
 
 # Ansible
 **/*.retry
