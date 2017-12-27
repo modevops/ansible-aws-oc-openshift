@@ -1,8 +1,7 @@
-- name: Prepare AWS
+- name: Prepare instance
   hosts: localhost
   gather_facts: false
   roles:
-    - role: check_aws_vars
     - role: create_security_group
     - role: create_instance
     - role: create_dns
