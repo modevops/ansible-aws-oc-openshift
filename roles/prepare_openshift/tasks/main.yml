@@ -11,9 +11,6 @@
 
         export NODE_DATA=$NODE_ROOT/data
 
-        export
-        CLI_URL=https://storage.googleapis.com/origin-ci-test/branch-logs/origin/v3.7.0/builds/test_branch_origin_cross/1032/artifacts/zips/openshift-origin-client-tools-v3.7.0-7ed6862-linux-64bit.tar.gz
-
         # create the volume folders
 
         sudo mkdir -p $NODE_DATA/v1
@@ -29,7 +26,7 @@
 
         # install the CLI
 
-        curl -L -0 $CLI_URL | tar -zx -C /tmp
+        curl -L -0 {{openshift_cli_url}} | tar -zx -C /tmp
 
         cd /tmp/op* && sudo mv oc /usr/local && sudo ln -sf /usr/local/oc
         /usr/local/bin/oc
