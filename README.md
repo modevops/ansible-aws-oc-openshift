@@ -1,5 +1,6 @@
 # ansible-openshift
-Ansible Playbook to setup a single-node OpenShift 'cluster' on AWS.
+
+Provisions a simple OpenShift development environment on AWS
 
 ## Preparation
 
