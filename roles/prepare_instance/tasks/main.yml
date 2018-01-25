@@ -33,5 +33,5 @@
   become: true
    
 - name: Restart Docker
-  shell: systemctl start docker && systemctl enable docker && systemctl start docker
+  shell: systemctl stop docker && systemctl enable docker && systemctl start docker
   become: true
